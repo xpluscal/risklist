@@ -63,6 +63,7 @@ export default function CustomTable({ columns, data }) {
 
   let headerColor = useColorModeValue('pink.600', 'pink.200')
 
+
   // Render the UI for your table
   return (
     <>
