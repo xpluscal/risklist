@@ -57,7 +57,7 @@ function GlobalFilter({
     <Flex
       justifyContent="flex-end"
     >
-      <FormControl w={{ md: '320px' }} id="search" mb="8" ml="4">
+      <FormControl w={{ md: '320px' }} id="search" mb="12" ml="4">
         <InputGroup size="lg">
           <FormLabel srOnly>Filter projects</FormLabel>
           <InputLeftElement pointerEvents="none" color={"gray.400","gray.50"}>
