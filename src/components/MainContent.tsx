@@ -22,7 +22,7 @@ type Props = {
 };
 
 export default function MainContent({ children }: Props) {
-  const bg = useColorModeValue("white", "gray.700")
+  const bg = useColorModeValue("linear-gradient(180deg, #F4EFBC 0%, rgba(221, 215, 163, 0.9) 100%)", "linear-gradient(180deg, #1F3051 0%, #0B1A37 100%)")
 
   const data = React.useMemo(
     () => listData,

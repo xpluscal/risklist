@@ -1,8 +1,10 @@
-import React from "react";
-import { useTable, usePagination, useSortBy } from "react-table";
+import React, { useMemo, useState } from "react";
+import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
+import {matchSorter} from 'match-sorter'
+
 import {
   chakra,
-  useColorModeValue,
+  useColorModeValue as mode,
   Table,
   Thead,
   Tbody,
@@ -10,6 +12,11 @@ import {
   Th,
   Td,
   Flex,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement,
   IconButton,
   Text,
   Tooltip,
@@ -26,12 +33,108 @@ import {
   ArrowRightIcon,
   ArrowLeftIcon,
   ChevronRightIcon,
-  ChevronLeftIcon
+  ChevronLeftIcon,
+  HiSearchCircle
 } from "@chakra-ui/icons";
+
+import { BsSearch } from 'react-icons/bs'
 
 import makeData from "./makeData";
 
+// Define a default UI for filtering
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}) {
+  const count = preGlobalFilteredRows.length
+  const [value, setValue] = useState(globalFilter)
+  const onChange = useAsyncDebounce(value => {
+    setGlobalFilter(value || undefined)
+  }, 200)
+
+  return (
+    <Flex
+      justifyContent="flex-end"
+    >
+      <FormControl w={{ md: '320px' }} id="search" mb="8" ml="4">
+        <InputGroup size="lg">
+          <FormLabel srOnly>Filter projects</FormLabel>
+          <InputLeftElement pointerEvents="none" color={"gray.400","gray.50"}>
+            <BsSearch />
+          </InputLeftElement>
+          <Input
+            rounded="base"
+            type="search"
+            variant="filled"
+            placeholder="Filter by name or email..."
+            value={value || ""}
+            onChange={e => {
+              setValue(e.target.value);
+              onChange(e.target.value);
+            }}
+          />
+        </InputGroup>
+      </FormControl>
+    </Flex>
+  )
+}
+
+// Define a default UI for filtering
+function DefaultColumnFilter({
+  column: { filterValue, preFilteredRows, setFilter },
+}) {
+  const count = preFilteredRows.length
+
+  return (
+    <input
+      value={filterValue || ''}
+      onChange={e => {
+        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+      }}
+      placeholder={`Search ${count} records...`}
+    />
+  )
+}
+
+function fuzzyTextFilterFn(rows, id, filterValue) {
+  return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
+}
+
+// Let the table remove the filter if the string is empty
+fuzzyTextFilterFn.autoRemove = val => !val
+
+
 export default function CustomTable({ columns, data }) {
+
+  const filterTypes = useMemo(
+    () => ({
+      // Add a new fuzzyTextFilterFn filter type.
+      fuzzyText: fuzzyTextFilterFn,
+      // Or, override the default text filter to use
+      // "startWith"
+      text: (rows, id, filterValue) => {
+        return rows.filter(row => {
+          const rowValue = row.values[id]
+          return rowValue !== undefined
+            ? String(rowValue)
+                .toLowerCase()
+                .startsWith(String(filterValue).toLowerCase())
+            : true
+        })
+      },
+    }),
+    []
+  )
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      // Let's set up our default Filter UI
+      Filter: DefaultColumnFilter,
+    }),
+    []
+  )
+
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -50,23 +153,34 @@ export default function CustomTable({ columns, data }) {
     nextPage,
     previousPage,
     setPageSize,
+    preGlobalFilteredRows,
+    setGlobalFilter,
     state: { pageIndex, pageSize }
   } = useTable(
     {
       columns,
       data,
-      initialState: { pageIndex: 0, pageSize: 50 }
+      defaultColumn, // Be sure to pass the defaultColumn option
+      filterTypes,
+      initialState: { pageIndex: 0, pageSize: 25 }
     },
+    useFilters, // useFilters!
+    useGlobalFilter, // useGlobalFilter!
     useSortBy,
-    usePagination
+    usePagination,
   );
 
-  let headerColor = useColorModeValue('pink.600', 'pink.200')
+  let headerColor = mode('pink.600', 'pink.200')
 
 
   // Render the UI for your table
   return (
     <>
+      <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+
+                setGlobalFilter={setGlobalFilter}
+              />
       <Table {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
@@ -96,7 +210,7 @@ export default function CustomTable({ columns, data }) {
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <Tr flexShink={0} {...row.getRowProps()}>
+              <Tr flexShink={0} {...row.getRowProps()} borderBottom={mode("1px solid #000","1px solid #fff")}>
                 {row.cells.map((cell) => {
                   return (
                     <Td {...cell.getCellProps()}>{cell.render("Cell")}</Td>
