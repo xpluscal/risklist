@@ -12,7 +12,6 @@ export default function Layout({ children }: Props) {
       alignItems="center"
       justifyContent="flex-start"
       minH="70vh"
-      mt="10"
     >
       {children}
     </Flex>

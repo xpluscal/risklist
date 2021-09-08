@@ -22,6 +22,7 @@ export const App = () => (
   <ChakraProvider theme={theme}>
   <DarkMode>
   <Main
+    bg="red.500"
   >
     {/*<SmallNav />*/}
     <MainHeader />

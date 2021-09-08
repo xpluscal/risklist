@@ -178,10 +178,9 @@ export default function CustomTable({ columns, data }) {
     <>
       <GlobalFilter
                 preGlobalFilteredRows={preGlobalFilteredRows}
-
                 setGlobalFilter={setGlobalFilter}
               />
-      <Table {...getTableProps()}>
+      <Table {...getTableProps()} color={mode("gray.700", "white")}>
         <Thead>
           {headerGroups.map((headerGroup) => (
             <Tr {...headerGroup.getHeaderGroupProps()}>

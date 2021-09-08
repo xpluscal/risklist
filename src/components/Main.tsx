@@ -1,20 +1,22 @@
 import {
   Box,
+  BoxProps,
   Image,
   useColorModeValue,
 } from "@chakra-ui/react";
 
-type Props = {
+interface Props extends BoxProps {
   children?: ReactNode;
 };
 
-export default function Main({ children }: Props) {
+export default function Main({ children, ...rest }: Props) {
   const bg = useColorModeValue("#E9E2A7","#102143")
 
   return (
     <Box
-      bg={bg}
       position="relative"
+      bg={bg}
+      zIndex="0"
     >
       <Image
         position="fixed"
@@ -24,7 +26,12 @@ export default function Main({ children }: Props) {
         src="waves.svg"
         alt="waves"
       />
+      <Box
+        zIndex="1"
+        position="relative"
+      >
       {children}
+      </Box>
     </Box>
   );
 }
