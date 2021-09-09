@@ -36,6 +36,10 @@ export default function MainContent({ children }: Props) {
         accessor: "Project",
       },
       {
+        Header: "TVL KPI",
+        accessor: "TVL KPI",
+      },
+      {
         Header: "defisafety",
         accessor: "defisafety",
       },
