@@ -9,7 +9,6 @@ import {
   Code,
   Grid,
   DarkMode,
-  theme,
   extendTheme
 } from "@chakra-ui/react"
 import Layout from "./components/Layout";

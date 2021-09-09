@@ -172,7 +172,7 @@ export default function CustomTable({ columns, data }) {
     usePagination,
   );
 
-  let headerColor = mode('yellow.500', 'pink.200')
+  let headerColor = mode('#1D2070', 'pink.200')
 
   const [isLargerThan48] = useMediaQuery("(min-width: 48em)")
 
@@ -195,6 +195,7 @@ export default function CustomTable({ columns, data }) {
                   <Th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     color={headerColor}
+                    borderColor={mode("gray.600","gray.400")}
                     isNumeric={column.isNumeric}
                   >
                     {column.render("Header")}
