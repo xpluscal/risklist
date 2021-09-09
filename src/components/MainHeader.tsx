@@ -1,6 +1,7 @@
 import {
   Box,
   Flex,
+  useColorMode,
   Heading,
   Text,
   Image,
@@ -8,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 
 export default function MainNav() {
+
+  const { colorMode } = useColorMode()
 
   return (
     <Box>
@@ -18,7 +21,12 @@ export default function MainNav() {
         align={'center'}
         alignItems="center"
         flexDirection="column">
-        <Image mb={"2"} src="logo.svg" alt="risklist" />
+        { colorMode === 'dark' &&
+          <Image mb={"2"} src="logo.svg" alt="risklist" />
+        }
+        { colorMode === 'light' &&
+          <Image mb={"2"} src="logo-drk.svg" alt="risklist" />
+        }
         <Text mb={"3"}>by ensemble</Text>
         <Box
           w="4px"

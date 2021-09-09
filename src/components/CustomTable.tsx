@@ -5,6 +5,8 @@ import {matchSorter} from 'match-sorter'
 import {
   chakra,
   useColorModeValue as mode,
+  useMediaQuery,
+  Box,
   Table,
   Thead,
   Tbody,
@@ -57,10 +59,10 @@ function GlobalFilter({
     <Flex
       justifyContent="flex-end"
     >
-      <FormControl w={{ md: '320px' }} id="search" mb="12" ml="4">
+      <FormControl w={{ base: 'full', md: '320px' }} id="search" mb="12" ml="4">
         <InputGroup size="lg">
           <FormLabel srOnly>Filter projects</FormLabel>
-          <InputLeftElement pointerEvents="none" color={"gray.400","gray.50"}>
+          <InputLeftElement pointerEvents="none" color={mode("gray.500","gray.50")}>
             <BsSearch />
           </InputLeftElement>
           <Input
@@ -170,7 +172,9 @@ export default function CustomTable({ columns, data }) {
     usePagination,
   );
 
-  let headerColor = mode('pink.600', 'pink.200')
+  let headerColor = mode('yellow.500', 'pink.200')
+
+  const [isLargerThan48] = useMediaQuery("(min-width: 48em)")
 
 
   // Render the UI for your table
@@ -180,48 +184,53 @@ export default function CustomTable({ columns, data }) {
                 preGlobalFilteredRows={preGlobalFilteredRows}
                 setGlobalFilter={setGlobalFilter}
               />
-      <Table {...getTableProps()} color={mode("gray.700", "white")}>
-        <Thead>
-          {headerGroups.map((headerGroup) => (
-            <Tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <Th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                  color={headerColor}
-                  isNumeric={column.isNumeric}
-                >
-                  {column.render("Header")}
-                  <chakra.span pl="4">
-                    {column.isSorted ? (
-                      column.isSortedDesc ? (
-                        <TriangleDownIcon aria-label="sorted descending" />
-                      ) : (
-                        <TriangleUpIcon aria-label="sorted ascending" />
-                      )
-                    ) : null}
-                  </chakra.span>
-                </Th>
-              ))}
-            </Tr>
-          ))}
-        </Thead>
-        <Tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <Tr flexShink={0} {...row.getRowProps()} borderBottom={mode("1px solid #000","1px solid #fff")}>
-                {row.cells.map((cell) => {
-                  return (
-                    <Td {...cell.getCellProps()}>{cell.render("Cell")}</Td>
-                  );
-                })}
+      <Box
+        overflow="scroll"
+      >
+        <Table {...getTableProps()} minW="800px" color={mode("gray.700", "white")}>
+          <Thead>
+            {headerGroups.map((headerGroup) => (
+              <Tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <Th
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                    color={headerColor}
+                    isNumeric={column.isNumeric}
+                  >
+                    {column.render("Header")}
+                    <chakra.span pl="4">
+                      {column.isSorted ? (
+                        column.isSortedDesc ? (
+                          <TriangleDownIcon aria-label="sorted descending" />
+                        ) : (
+                          <TriangleUpIcon aria-label="sorted ascending" />
+                        )
+                      ) : null}
+                    </chakra.span>
+                  </Th>
+                ))}
               </Tr>
-            );
-          })}
-        </Tbody>
-      </Table>
+            ))}
+          </Thead>
+          <Tbody {...getTableBodyProps()}>
+            {page.map((row, i) => {
+              prepareRow(row);
+              return (
+                <Tr flexShink={0} {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <Td {...cell.getCellProps()} borderBottom="1px solid" borderColor={mode("gray.300","gray.600")}>{cell.render("Cell")}</Td>
+                    );
+                  })}
+                </Tr>
+              );
+            })}
+          </Tbody>
+        </Table>
 
-      <Flex justifyContent="space-between" m={4} alignItems="center">
+      </Box>
+
+      <Flex justifyContent="space-between" m={4} alignItems="center" color={mode("gray.900","white")}>
         <Flex>
           <Tooltip label="First Page">
             <IconButton
@@ -240,7 +249,9 @@ export default function CustomTable({ columns, data }) {
           </Tooltip>
         </Flex>
 
-        <Flex alignItems="center">
+        { isLargerThan48 &&
+
+        <Flex alignItems="center" >
           <Text flexShrink="0" mr={8}>
             Page{" "}
             <Text fontWeight="bold" as="span">
@@ -284,6 +295,8 @@ export default function CustomTable({ columns, data }) {
             ))}
           </Select>
         </Flex>
+
+        }
 
         <Flex>
           <Tooltip label="Next Page">

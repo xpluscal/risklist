@@ -20,17 +20,13 @@ import { Logo } from "./Logo"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-  <DarkMode>
-  <Main
-    bg="red.500"
-  >
-    {/*<SmallNav />*/}
+  <Main>
+    <SmallNav />
     <MainHeader />
 
     <Layout>
       <MainContent/>
     </Layout>
   </Main>
-  </DarkMode>
   </ChakraProvider>
 )
