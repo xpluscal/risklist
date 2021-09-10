@@ -1,14 +1,120 @@
 let listData = [
  {
+    "Project": "Uniswap V3",
+    "TVL KPI": 12.19,
+    "TVL KPI Chains": "eth",
+    "defisafety": "94%",
+    "defiscore": null,
+    "nexusmutual": "2.60%"
+ },
+ {
    "Project": "Compound",
    "TVL KPI": 12.31,
+   "TVL KPI Chains": "eth",
    "defisafety": "97%",
    "defiscore": 8.4,
-   "nexusmutual": ""
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Balancer V2",
+   "TVL KPI": 11.68,
+   "TVL KPI Chains": "eth",
+   "defisafety": "100%",
+   "defiscore": null,
+   "nexusmutual": "3.11%"
+ },
+ {
+   "Project": "Aave",
+   "TVL KPI": 12.40,
+   "TVL KPI Chains": "eth,poly",
+   "defisafety": "91%",
+   "defiscore": 7.8,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "BarnBridge",
+   "TVL KPI": 10.40,
+   "TVL KPI Chains": "eth",
+   "defisafety": "91%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Liquity",
+   "TVL KPI": 11.62,
+   "TVL KPI Chains": "eth",
+   "defisafety": "84%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Opyn Protection",
+   "TVL KPI": 10.15,
+   "TVL KPI Chains": "eth",
+   "defisafety": "80%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Alpha Homora",
+   "TVL KPI": 11.38,
+   "TVL KPI Chains": "eth",
+   "defisafety": "79%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Curve Finance",
+   "TVL KPI": 12.26,
+   "TVL KPI Chains": "eth,poly",
+   "defisafety": "77%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "RAI and Reflexer Finance",
+   "TVL KPI": 10.61,
+   "TVL KPI Chains": "eth",
+   "defisafety": "76%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Vesper",
+   "TVL KPI": 11.19,
+   "TVL KPI Chains": "eth",
+   "defisafety": "71%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Harvest Finance",
+   "TVL KPI": 11.17,
+   "TVL KPI Chains": "eth",
+   "defisafety": "67%",
+   "defiscore": null,
+   "nexusmutual": "18.23%"
+ },
+ {
+   "Project": "Convex Finance",
+   "TVL KPI": 11.67,
+   "TVL KPI Chains": "eth",
+   "defisafety": "46%",
+   "defiscore": null,
+   "nexusmutual": "2.60%"
+ },
+ {
+   "Project": "Alchemix",
+   "TVL KPI": 10.85,
+   "TVL KPI Chains": "eth",
+   "defisafety": "44%",
+   "defiscore": null,
+   "nexusmutual": "12.05%"
  },
  {
    "Project": "mStable",
    "TVL KPI": 10.31,
+   "TVL KPI Chains": "eth",
    "defisafety": "97%",
    "defiscore": null,
    "nexusmutual": ""
@@ -28,13 +134,6 @@ let listData = [
    "nexusmutual": ""
  },
  {
-   "Project": "Uniswap V3",
-   "TVL KPI": 12.19,
-   "defisafety": "94%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "Ampleforth",
    "TVL KPI": null,
    "defisafety": "93%",
@@ -44,6 +143,7 @@ let listData = [
  {
    "Project": "Yearn V2 Finance",
    "TVL KPI": 11.89,
+   "TVL KPI Chains": "eth",
    "defisafety": "93%",
    "defiscore": null,
    "nexusmutual": ""
@@ -51,15 +151,9 @@ let listData = [
  {
    "Project": "dYdX",
    "TVL KPI": 10.87,
+   "TVL KPI Chains": "eth",
    "defisafety": "92%",
    "defiscore": 8,
-   "nexusmutual": ""
- },
- {
-   "Project": "Aave",
-   "TVL KPI": 12.40,
-   "defisafety": "91%",
-   "defiscore": 7.8,
    "nexusmutual": ""
  },
  {
@@ -77,15 +171,9 @@ let listData = [
    "nexusmutual": ""
  },
  {
-   "Project": "BarnBridge",
-   "TVL KPI": 10.40,
-   "defisafety": "91%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "Idle Finance",
    "TVL KPI": 10.65,
+   "TVL KPI Chains": "eth",
    "defisafety": "89%",
    "defiscore": null,
    "nexusmutual": ""
@@ -93,6 +181,7 @@ let listData = [
  {
    "Project": "Kyber",
    "TVL KPI": 10.66,
+   "TVL KPI Chains": "eth",
    "defisafety": "89%",
    "defiscore": null,
    "nexusmutual": ""
@@ -107,6 +196,7 @@ let listData = [
  {
    "Project": "RenVM",
    "TVL KPI": 11.27,
+   "TVL KPI Chains": "eth",
    "defisafety": "88%",
    "defiscore": null,
    "nexusmutual": ""
@@ -114,6 +204,7 @@ let listData = [
  {
    "Project": "bZx",
    "TVL KPI": 10.00,
+   "TVL KPI Chains": "eth",
    "defisafety": "87%",
    "defiscore": 5,
    "nexusmutual": ""
@@ -121,6 +212,7 @@ let listData = [
  {
    "Project": "Nexus Mutual",
    "TVL KPI": 11.02,
+   "TVL KPI Chains": "eth",
    "defisafety": "87%",
    "defiscore": null,
    "nexusmutual": ""
@@ -149,6 +241,7 @@ let listData = [
  {
    "Project": "Synthetix Exchange",
    "TVL KPI": 11.80,
+   "TVL KPI Chains": "eth",
    "defisafety": "85%",
    "defiscore": null,
    "nexusmutual": ""
@@ -156,6 +249,7 @@ let listData = [
  {
    "Project": "UMA Project",
    "TVL KPI": 10.56,
+   "TVL KPI Chains": "eth",
    "defisafety": "85%",
    "defiscore": null,
    "nexusmutual": ""
@@ -170,6 +264,7 @@ let listData = [
  {
    "Project": "Maker DAO",
    "TVL KPI": 12.96,
+   "TVL KPI Chains": "eth",
    "defisafety": "84%",
    "defiscore": null,
    "nexusmutual": ""
@@ -177,6 +272,7 @@ let listData = [
  {
    "Project": "Metronome",
    "TVL KPI": 10.31,
+   "TVL KPI Chains": "eth",
    "defisafety": "84%",
    "defiscore": null,
    "nexusmutual": ""
@@ -184,16 +280,10 @@ let listData = [
  {
    "Project": "SET Protocol v2",
    "TVL KPI": 10.47,
+   "TVL KPI Chains": "eth",
    "defisafety": "84%",
    "defiscore": null,
    "nexusmutual": ""
- },
- {
-   "Project": "Liquity",
-   "TVL KPI": 11.62,
-   "defisafety": "84%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
  },
  {
    "Project": "Auctus Finance",
@@ -205,6 +295,7 @@ let listData = [
  {
    "Project": "C.R.E.A.M (Swap and Lending)",
    "TVL KPI": 11.14,
+   "TVL KPI Chains": "eth",
    "defisafety": "83%",
    "defiscore": null,
    "nexusmutual": ""
@@ -212,6 +303,7 @@ let listData = [
  {
    "Project": "Enzyme",
    "TVL KPI": 10.19,
+   "TVL KPI Chains": "eth",
    "defisafety": "83%",
    "defiscore": null,
    "nexusmutual": ""
@@ -219,6 +311,7 @@ let listData = [
  {
    "Project": "FLEXA / AMP",
    "TVL KPI": 11.43,
+   "TVL KPI Chains": "eth",
    "defisafety": "82%",
    "defiscore": null,
    "nexusmutual": ""
@@ -226,6 +319,7 @@ let listData = [
  {
    "Project": "Loopring",
    "TVL KPI": 10.64,
+   "TVL KPI Chains": "eth",
    "defisafety": "82%",
    "defiscore": null,
    "nexusmutual": ""
@@ -247,6 +341,7 @@ let listData = [
  {
    "Project": "B Protocol",
    "TVL KPI": 10.31,
+   "TVL KPI Chains": "eth",
    "defisafety": "80%",
    "defiscore": null,
    "nexusmutual": ""
@@ -264,15 +359,9 @@ let listData = [
    "nexusmutual": ""
  },
  {
-   "Project": "Opyn Protection",
-   "TVL KPI": 10.15,
-   "defisafety": "80%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "88mph",
    "TVL KPI": 9.86,
+   "TVL KPI Chains": "eth",
    "defisafety": "79%",
    "defiscore": null,
    "nexusmutual": ""
@@ -280,6 +369,7 @@ let listData = [
  {
    "Project": "Notional Finance",
    "TVL KPI": 9.57,
+   "TVL KPI Chains": "eth",
    "defisafety": "79%",
    "defiscore": null,
    "nexusmutual": ""
@@ -297,20 +387,6 @@ let listData = [
    "nexusmutual": ""
  },
  {
-   "Project": "Alpha Homora",
-   "TVL KPI": 11.38,
-   "defisafety": "79%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
-   "Project": "Curve Finance",
-   "TVL KPI": 12.26,
-   "defisafety": "77%",
-   "defiscore": null,
-   "nexusmutual": ""
- },
- {
    "Project": "Cover Protocol",
    "defisafety": "76%",
    "defiscore": null,
@@ -319,20 +395,15 @@ let listData = [
  {
    "Project": "Dodo",
    "TVL KPI": 10.30,
+   "TVL KPI Chains": "eth",
    "defisafety": "76%",
    "defiscore": null,
    "nexusmutual": ""
  },
  {
-   "Project": "RAI and Reflexer Finance",
-   "TVL KPI": 10.61,
-   "defisafety": "76%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "Hegic Options",
    "TVL KPI": 10.24,
+   "TVL KPI Chains": "eth",
    "defisafety": "75%",
    "defiscore": null,
    "nexusmutual": ""
@@ -364,6 +435,7 @@ let listData = [
  {
    "Project": "RARI Capital",
    "TVL KPI": 10.37,
+   "TVL KPI Chains": "eth",
    "defisafety": "74%",
    "defiscore": null,
    "nexusmutual": ""
@@ -377,6 +449,7 @@ let listData = [
  {
    "Project": "TrueFi",
    "TVL KPI": 10.79,
+   "TVL KPI Chains": "eth",
    "defisafety": "73%",
    "defiscore": null,
    "nexusmutual": ""
@@ -384,20 +457,15 @@ let listData = [
  {
    "Project": "DeFi Saver",
    "TVL KPI": 11.27,
+   "TVL KPI Chains": "eth",
    "defisafety": "71%",
    "defiscore": null,
    "nexusmutual": ""
  },
  {
-   "Project": "Vesper",
-   "TVL KPI": 11.19,
-   "defisafety": "71%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "dForce",
    "TVL KPI": 10.33,
+   "TVL KPI Chains": "eth",
    "defisafety": "70%",
    "defiscore": null,
    "nexusmutual": ""
@@ -405,6 +473,7 @@ let listData = [
  {
    "Project": "dHedge",
    "TVL KPI": 9.73,
+   "TVL KPI Chains": "eth",
    "defisafety": "70%",
    "defiscore": null,
    "nexusmutual": ""
@@ -424,16 +493,10 @@ let listData = [
  {
    "Project": "Idex",
    "TVL KPI": 9.68,
+   "TVL KPI Chains": "eth",
    "defisafety": "68%",
    "defiscore": null,
    "nexusmutual": ""
- },
- {
-   "Project": "Harvest Finance",
-   "TVL KPI": 11.17,
-   "defisafety": "67%",
-   "defiscore": null,
-   "nexusmutual": "18.23%"
  },
  {
    "Project": "CORE (C.Vault) Finance",
@@ -444,6 +507,7 @@ let listData = [
  {
    "Project": "Pickle Finance V2",
    "TVL KPI": 10.41,
+   "TVL KPI Chains": "eth",
    "defisafety": "66%",
    "defiscore": null,
    "nexusmutual": ""
@@ -457,6 +521,7 @@ let listData = [
  {
    "Project": "Badger Finance",
    "TVL KPI": 11.34,
+   "TVL KPI Chains": "eth",
    "defisafety": "65%",
    "defiscore": null,
    "nexusmutual": ""
@@ -512,6 +577,7 @@ let listData = [
  {
    "Project": "SushiSwap",
    "TVL KPI": 11.97,
+   "TVL KPI Chains": "eth",
    "defisafety": "57%",
    "defiscore": null,
    "nexusmutual": ""
@@ -525,6 +591,7 @@ let listData = [
  {
    "Project": "DFYN",
    "TVL KPI": 10.35,
+   "TVL KPI Chains": "poly",
    "defisafety": "56%",
    "defiscore": null,
    "nexusmutual": ""
@@ -532,6 +599,7 @@ let listData = [
  {
    "Project": "Instadapp",
    "TVL KPI": 12.12,
+   "TVL KPI Chains": "eth",
    "defisafety": "55%",
    "defiscore": null,
    "nexusmutual": ""
@@ -545,6 +613,7 @@ let listData = [
  {
    "Project": "Olympus Finance (OHM)",
    "TVL KPI": 9.78,
+   "TVL KPI Chains": "eth",
    "defisafety": "54%",
    "defiscore": null,
    "nexusmutual": ""
@@ -594,6 +663,7 @@ let listData = [
  {
    "Project": "Index Coop",
    "TVL KPI": 10.59,
+   "TVL KPI Chains": "eth",
    "defisafety": "49%",
    "defiscore": null,
    "nexusmutual": ""
@@ -601,6 +671,7 @@ let listData = [
  {
    "Project": "O3Swap",
    "TVL KPI": 10.29,
+   "TVL KPI Chains": "eth",
    "defisafety": "49%",
    "defiscore": null,
    "nexusmutual": ""
@@ -620,6 +691,7 @@ let listData = [
  {
    "Project": "Inverse Finance",
    "TVL KPI": 9.62,
+   "TVL KPI Chains": "eth",
    "defisafety": "47%",
    "defiscore": null,
    "nexusmutual": ""
@@ -637,24 +709,10 @@ let listData = [
    "nexusmutual": ""
  },
  {
-   "Project": "Convex Finance",
-   "TVL KPI": 11.67,
-   "defisafety": "46%",
-   "defiscore": null,
-   "nexusmutual": "2.60%"
- },
- {
    "Project": "PantherSwap – BSC",
    "defisafety": "45%",
    "defiscore": null,
    "nexusmutual": "24.75%"
- },
- {
-   "Project": "Alchemix",
-   "TVL KPI": 10.85,
-   "defisafety": "44%",
-   "defiscore": null,
-   "nexusmutual": "12.05%"
  },
  {
    "Project": "Stabilize Finance",
@@ -785,6 +843,7 @@ let listData = [
  {
    "Project": "1inch Finance",
    "TVL KPI": 11.01,
+   "TVL KPI Chains": "eth",
    "defisafety": "31%",
    "defiscore": null,
    "nexusmutual": ""
@@ -792,6 +851,7 @@ let listData = [
  {
    "Project": "DerivaDex",
    "TVL KPI": 9.98,
+   "TVL KPI Chains": "eth",
    "defisafety": "31%",
    "defiscore": null,
    "nexusmutual": ""
@@ -817,6 +877,7 @@ let listData = [
  {
    "Project": "DeFi Swap (Crypto.com)",
    "TVL KPI": 10.20,
+   "TVL KPI Chains": "eth",
    "defisafety": "28%",
    "defiscore": null,
    "nexusmutual": ""
@@ -836,6 +897,7 @@ let listData = [
  {
    "Project": "Swerve Finance",
    "TVL KPI": 10.25,
+   "TVL KPI Chains": "eth",
    "defisafety": "27%",
    "defiscore": null,
    "nexusmutual": ""
@@ -843,6 +905,7 @@ let listData = [
  {
    "Project": "QuickSwap – Polygon",
    "TVL KPI": 11.09,
+   "TVL KPI Chains": "poly",
    "defisafety": "26%",
    "defiscore": null,
    "nexusmutual": ""
@@ -862,6 +925,7 @@ let listData = [
  {
    "Project": "Wing Finance",
    "TVL KPI": 9.26,
+   "TVL KPI Chains": "eth",
    "defisafety": "21%",
    "defiscore": null,
    "nexusmutual": ""
@@ -883,13 +947,6 @@ let listData = [
    "defisafety": "11%",
    "defiscore": null,
    "nexusmutual": ""
- },
- {
-   "Project": "Balancer V2",
-   "TVL KPI": 11.68,
-   "defisafety": "100%",
-   "defiscore": null,
-   "nexusmutual": "26.66%"
  },
  {
    "Project": "Thorchain",

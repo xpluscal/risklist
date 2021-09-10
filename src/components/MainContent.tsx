@@ -7,8 +7,10 @@ import React, {
   ReactNode
 } from "react";
 import {
+  Box,
   Flex,
   Text,
+  Link,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -59,17 +61,27 @@ export default function MainContent({ children }: Props) {
 
 
   return (
-    <Flex
-      width="100vw"
-      flexDirection="column"
-      bg={bg}
-      maxWidth="1024px"
-      boxShadow="0px 4px 15px rgba(0,0,0,0.16)"
-      p="8"
-      mb="80"
-      borderRadius="9"
-    >
-      <CustomTable columns={columns} data={data}/>
-    </Flex>
+    <Box>
+      <Flex
+        width="100vw"
+        flexDirection="column"
+        bg={bg}
+        maxWidth="1024px"
+        boxShadow="0px 4px 15px rgba(0,0,0,0.16)"
+        p="8"
+        mb="20"
+        borderRadius="9"
+      >
+        <CustomTable columns={columns} data={data}/>
+      </Flex>
+      <Box
+        textAlign="center"
+        mb="60"
+        color={useColorModeValue('#1D2070','white')}
+      >
+        The information provided is no financial advice. <br/>
+        A joint project by <Link href="https://www.opentelos.com" isExternal>Opentelos</Link> and <Link href="https://www.optifyyourworld.com/" isExternal>Optify</Link>.
+      </Box>
+    </Box>
   );
 }
