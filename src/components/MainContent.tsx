@@ -80,7 +80,7 @@ export default function MainContent({ children }: Props) {
         color={useColorModeValue('#1D2070','white')}
       >
         The information provided is no financial advice. <br/>
-        A joint project by <Link href="https://www.opentelos.com" isExternal>Opentelos</Link> and <Link href="https://www.optifyyourworld.com/" isExternal>Optify</Link>.
+        A joint project by <Link href="https://www.opentelos.com" isExternal>Opentelos</Link> and <Link href="https://opty.fi/" isExternal>Optyfi</Link>.
       </Box>
     </Box>
   );
